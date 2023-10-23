@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real-time Noise Level Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #noise-level {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        #noise-value {
+            font-size: 2em;
+            color: #007acc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Noise Pollution Monitoring</h1>
+        <div id="noise-level">
+            <h2>Noise Level (dB)</h2>
+            <div id="noise-value">Loading...</div>
+        </div>
+    </div>
+    <script>
+        // Simulated real-time noise data (replace with actual data source)
+        function getNoiseData() {
+            return Math.floor(Math.random() * 100); // Simulated noise level (0-100 dB)
+        }
+
+        // Function to update noise level
+        function updateNoiseLevel() {
+            const noiseValue = document.getElementById("noise-value");
+            const noiseLevel = getNoiseData();
+            noiseValue.textContent = `${noiseLevel} dB`;
+        }
+
+        // Update noise level every 2 seconds (adjust as needed)
+        setInterval(updateNoiseLevel, 2000);
+
+        // Initial update
+        updateNoiseLevel();
+    </script>
+</body>
+</html>
